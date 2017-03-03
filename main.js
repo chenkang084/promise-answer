@@ -78,3 +78,5 @@ const loadDataTask = genLoadDataTask(urls);
 taskRunner(loadDataTask).then((value) => {
     console.log(value)
 })
+
+
