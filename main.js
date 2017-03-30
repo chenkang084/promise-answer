@@ -42,12 +42,12 @@ function sendRequests(urls, split = 2, result = []) {
     let urlsList = [];
 
     if (urls.length > 0) {
-        urlsList = urls.splice(0, 2)
+        urlsList = urls.splice(0, split)
         console.log('send %s urls start', split);
         setPromiseArr(urlsList).then((data) => {
             result = result.concat(data)
             console.log('get %s urls result= %s', split, result);
-            sendRequests(urls, 2, result);
+            sendRequests(urls, split, result);
         })
     } else {
         console.log(result);
